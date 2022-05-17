@@ -2,9 +2,11 @@ package com.luv2code.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.IOException;
+
 public class AnnotationDemoApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // read spring config file
         ClassPathXmlApplicationContext context =
