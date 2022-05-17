@@ -13,6 +13,7 @@ import java.io.IOException;
 public class TennisCoach implements Coach {
 
     @Autowired
+
     @Qualifier("fortuneFileService")
     private FortuneService fortuneService;
 
