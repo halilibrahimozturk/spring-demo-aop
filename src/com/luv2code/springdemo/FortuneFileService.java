@@ -2,17 +2,38 @@ package com.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class FortuneFileService implements FortuneService{
+
+
+    List<String> fortunes=new ArrayList<String>();
+
     @Override
     public String getFortune() throws IOException {
 
 
-        // File path is passed as parameter
+
+
+
+
+
+
+
+
+
+        return fortunes.get((int) ((Math.random() * (fortunes.size() - 0)) + 0));
+    }
+
+    @PostConstruct
+    public void doStartupStuff() throws IOException {
+
+
+// File path is passed as parameter
         File file = new File(
                 "/home/veli/Masaüstü/Fortunes.txt");
 
@@ -29,16 +50,11 @@ public class FortuneFileService implements FortuneService{
         // Condition holds true till
         // there is character in a string
 
-        List<String> fortunes=new ArrayList<String>();
 
         while ((st = br.readLine()) != null){
 
             // Print the string
             fortunes.add(st);
         }
-
-
-
-        return fortunes.get((int) ((Math.random() * (fortunes.size() - 0)) + 0));
     }
 }
